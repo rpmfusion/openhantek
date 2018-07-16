@@ -1,6 +1,6 @@
-%global gitcommit_full 9935f0a6defa78a77824d389472d9b3a7172a1aa
+%global gitcommit_full 57e0bebcc1d4cf99d70071eae48604149332abd3
 %global gitcommit %(c=%{gitcommit_full}; echo ${c:0:7})
-%global date 20180710
+%global date 20180715
 
 Name:           openhantek
 Version:        0
@@ -67,6 +67,9 @@ install -p -D -m 644 %{name}/res/images/%{name}.svg %{buildroot}%{_datadir}/icon
 
 
 %changelog
+* Mon Jul 16 2018 Vasiliy N. Glazov <vascom2@gmail.com> - 0-1.20180715git57e0beb
+- Update to latest git
+
 * Wed Jul 11 2018 Vasiliy N. Glazov <vascom2@gmail.com> - 0-1.20180710git9935f0a
 - Update to latest git
 

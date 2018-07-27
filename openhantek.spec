@@ -4,7 +4,7 @@
 
 Name:           openhantek
 Version:        0
-Release:        1.%{date}git%{gitcommit}%{?dist}
+Release:        2.%{date}git%{gitcommit}%{?dist}
 Summary:        Hantek and compatible USB digital signal oscilloscope
 
 #Contain nonfree firmware
@@ -67,6 +67,9 @@ install -p -D -m 644 %{name}/res/images/%{name}.svg %{buildroot}%{_datadir}/icon
 
 
 %changelog
+* Fri Jul 27 2018 RPM Fusion Release Engineering <sergio@serjux.com> - 0-2.20180715git57e0beb
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_29_Mass_Rebuild
+
 * Mon Jul 16 2018 Vasiliy N. Glazov <vascom2@gmail.com> - 0-1.20180715git57e0beb
 - Update to latest git
 

@@ -4,7 +4,7 @@
 
 Name:           openhantek
 Version:        0
-Release:        2.%{date}git%{gitcommit}%{?dist}
+Release:        3.%{date}git%{gitcommit}%{?dist}
 Summary:        Hantek and compatible USB digital signal oscilloscope
 
 #Contain nonfree firmware
@@ -28,7 +28,6 @@ BuildRequires:  doxygen
 BuildRequires:  pkgconfig(udev)
 
 Requires:       hicolor-icon-theme
-Requires:       systemd-udev
 
 %description
 OpenHantek is a free software for Hantek and compatible
@@ -67,6 +66,10 @@ install -p -D -m 644 %{name}/res/images/%{name}.svg %{buildroot}%{_datadir}/icon
 
 
 %changelog
+* Sat Dec 08 2018 Nicolas Chauvet <kwizart@gmail.com> - 0-3.20180722git7862387
+- Drop systemd-udev as it's installed by default.
+  This avoid a dependency break in el7 as udev is provided by the systemd package
+
 * Wed Aug 01 2018 Vasiliy N. Glazov <vascom2@gmail.com> - 0-2.20180722git7862387
 - Update to latest git
 

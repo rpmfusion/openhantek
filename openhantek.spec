@@ -1,6 +1,6 @@
-%global gitcommit_full 78623870f4e18910448b9beed86b32911f1db3a2
+%global gitcommit_full eb33325b9e7168043914c2557d1263cad0a0785e
 %global gitcommit %(c=%{gitcommit_full}; echo ${c:0:7})
-%global date 20180722
+%global date 20190110
 
 Name:           openhantek
 Version:        0
@@ -66,6 +66,9 @@ install -p -D -m 644 %{name}/res/images/%{name}.svg %{buildroot}%{_datadir}/icon
 
 
 %changelog
+* Mon Feb 25 2019 Vasiliy N. Glazov <vascom2@gmail.com> - 0-2.20190110giteb33325
+- Update to latest git
+
 * Sat Dec 08 2018 Nicolas Chauvet <kwizart@gmail.com> - 0-3.20180722git7862387
 - Drop systemd-udev as it's installed by default.
   This avoid a dependency break in el7 as udev is provided by the systemd package

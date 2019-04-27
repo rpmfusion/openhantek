@@ -1,16 +1,15 @@
-%global gitcommit_full eb33325b9e7168043914c2557d1263cad0a0785e
-%global gitcommit %(c=%{gitcommit_full}; echo ${c:0:7})
-%global date 20190110
+%global optflags %{optflags} -flto
+%global build_ldflags %{build_ldflags} -flto
 
 Name:           openhantek
-Version:        0
-Release:        4.%{date}git%{gitcommit}%{?dist}
+Version:        2.01
+Release:        1%{?dist}
 Summary:        Hantek and compatible USB digital signal oscilloscope
 
 #Contain nonfree firmware
 License:        GPLv3+ and GPLv2+ and ASL 2.0 and nonfree
-URL:            http://openhantek.org
-Source0:        https://github.com/OpenHantek/openhantek/tarball/%{gitcommit_full}
+URL:            https://github.com/OpenHantek/OpenHantek6022
+Source0:        %{url}/archive/v%{version}.tar.gz
 Source1:        %{name}.desktop
 
 BuildRequires:  gcc-c++
@@ -35,13 +34,17 @@ OpenHantek is a free software for Hantek and compatible
 Supported devices: DSO2xxx Series, DSO52xx Series, 6022BE/BL.
 
 %prep
-%autosetup -n OpenHantek-%{name}-%{gitcommit}
+%autosetup -n OpenHantek6022-%{version}
 
 
 %build
 mkdir build
 pushd build
-    %cmake3 ..
+    %cmake3 \
+        -DCMAKE_AR=/usr/bin/gcc-ar \
+        -DCMAKE_RANLIB=/usr/bin/gcc-ranlib \
+        -DCMAKE_NM=/usr/bin/gcc-nm \
+        ..
     %make_build
 popd
 
@@ -66,6 +69,9 @@ install -p -D -m 644 %{name}/res/images/%{name}.svg %{buildroot}%{_datadir}/icon
 
 
 %changelog
+* Sat Apr 27 2019 Vasiliy N. Glazov <vascom2@gmail.com> - 2.01-1
+- Update to 2.01
+
 * Tue Mar 05 2019 RPM Fusion Release Engineering <leigh123linux@gmail.com> - 0-4.20190110giteb33325
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_30_Mass_Rebuild
 

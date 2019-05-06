@@ -34,7 +34,7 @@ OpenHantek is a free software for Hantek and compatible
 Supported devices: DSO2xxx Series, DSO52xx Series, 6022BE/BL.
 
 %prep
-%autosetup -n OpenHantek6022-master
+%autosetup -n OpenHantek6022-%{version}
 # sed -i 's|specification.samplerate.single.max = 30e6;|specification.samplerate.single.max = 16e6;|' openhantek/src/hantekdso/models/modelDSO6022.cpp
 # sed -i 's|format.setSamples(4); // Antia-Aliasing, Multisampling|//format.setSamples(4); // Antia-Aliasing, Multisampling|' openhantek/src/glscope.cpp
 

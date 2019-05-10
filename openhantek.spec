@@ -1,8 +1,8 @@
-%global optflags %{optflags} -flto -Wp,-U_GLIBCXX_ASSERTIONS
+%global optflags %{optflags} -flto
 %global build_ldflags %{build_ldflags} -flto
 
 Name:           openhantek
-Version:        2.03
+Version:        2.04
 Release:        1%{?dist}
 Summary:        Hantek and compatible USB digital signal oscilloscope
 
@@ -70,6 +70,9 @@ install -p -D -m 644 %{name}/res/images/%{name}.svg %{buildroot}%{_datadir}/icon
 
 
 %changelog
+* Fri May 10 2019 Vasiliy N. Glazov <vascom2@gmail.com> - 2.04-1
+- Update to 2.04
+
 * Mon May 06 2019 Vasiliy N. Glazov <vascom2@gmail.com> - 2.03-1
 - Update to 2.03
 - Fix crashing in normal mode

@@ -2,7 +2,7 @@
 %global build_ldflags %{build_ldflags} -flto
 
 Name:           openhantek
-Version:        2.06
+Version:        2.07
 Release:        1%{?dist}
 Summary:        Hantek and compatible USB digital signal oscilloscope
 
@@ -31,12 +31,10 @@ Requires:       hicolor-icon-theme
 %description
 OpenHantek is a free software for Hantek and compatible
 (Voltcraft/Darkwire/Protek/Acetech) USB digital signal oscilloscopes.
-Supported devices: DSO2xxx Series, DSO52xx Series, 6022BE/BL.
+Supported devices: 6022BE/BL.
 
 %prep
 %autosetup -n OpenHantek6022-%{version}
-# sed -i 's|specification.samplerate.single.max = 30e6;|specification.samplerate.single.max = 16e6;|' openhantek/src/hantekdso/models/modelDSO6022.cpp
-# sed -i 's|format.setSamples(4); // Antia-Aliasing, Multisampling|//format.setSamples(4); // Antia-Aliasing, Multisampling|' openhantek/src/glscope.cpp
 
 %build
 mkdir build
@@ -70,6 +68,9 @@ install -p -D -m 644 %{name}/res/images/%{name}.svg %{buildroot}%{_datadir}/icon
 
 
 %changelog
+* Thu May 23 2019 Vasiliy N. Glazov <vascom2@gmail.com> - 2.07-1
+- Update to 2.07
+
 * Wed May 15 2019 Vasiliy N. Glazov <vascom2@gmail.com> - 2.06-1
 - Update to 2.06
 

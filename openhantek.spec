@@ -6,8 +6,7 @@ Version:        2.09
 Release:        1%{?dist}
 Summary:        Hantek and compatible USB digital signal oscilloscope
 
-#Contain nonfree firmware
-License:        GPLv3+ and GPLv2+ and ASL 2.0 and nonfree
+License:        GPLv3+ and GPLv2+ and ASL 2.0
 URL:            https://github.com/OpenHantek/OpenHantek6022
 Source0:        %{url}/archive/v%{version}.tar.gz
 Source1:        %{name}.desktop
@@ -69,6 +68,7 @@ install -p -D -m 644 %{name}/res/images/%{name}.svg %{buildroot}%{_datadir}/icon
 %changelog
 * Mon May 27 2019 Vasiliy N. Glazov <vascom2@gmail.com> - 2.09-1
 - Update to 2.09
+- Corrected license
 
 * Thu May 23 2019 Vasiliy N. Glazov <vascom2@gmail.com> - 2.07-1
 - Update to 2.07

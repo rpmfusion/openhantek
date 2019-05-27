@@ -2,7 +2,7 @@
 %global build_ldflags %{build_ldflags} -flto
 
 Name:           openhantek
-Version:        2.07
+Version:        2.09
 Release:        1%{?dist}
 Summary:        Hantek and compatible USB digital signal oscilloscope
 
@@ -66,8 +66,10 @@ install -p -D -m 644 %{name}/res/images/%{name}.svg %{buildroot}%{_datadir}/icon
 %{_udevrulesdir}/60-hantek.*
 
 
-
 %changelog
+* Mon May 27 2019 Vasiliy N. Glazov <vascom2@gmail.com> - 2.09-1
+- Update to 2.09
+
 * Thu May 23 2019 Vasiliy N. Glazov <vascom2@gmail.com> - 2.07-1
 - Update to 2.07
 
